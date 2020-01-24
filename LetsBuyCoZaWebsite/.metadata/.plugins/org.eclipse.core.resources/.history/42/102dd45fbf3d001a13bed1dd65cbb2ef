@@ -1,0 +1,5 @@
+package com.WebService.LetsBuy.config;
+
+public class MvcConfig {
+
+}

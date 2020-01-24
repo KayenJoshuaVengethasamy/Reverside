@@ -1,0 +1,9 @@
+package com.WebService.LetsBuy;
+
+public class LetsBuyApplicationTests {
+
+	
+	public void contextLoads() {
+	}
+
+}
