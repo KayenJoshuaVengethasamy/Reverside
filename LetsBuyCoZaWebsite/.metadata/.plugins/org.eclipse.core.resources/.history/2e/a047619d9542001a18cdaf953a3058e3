@@ -1,0 +1,5 @@
+package com.WebService.LetsBuy.model;
+
+public class Product {
+
+}

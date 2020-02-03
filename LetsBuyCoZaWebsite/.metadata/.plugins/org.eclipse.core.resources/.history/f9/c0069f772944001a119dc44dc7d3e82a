@@ -1,0 +1,114 @@
+package com.WebService.LetsBuy.security.services;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+public class UserPrinciple implements UserDetails {
+	private static final long serialVersionUID = 1L;
+
+	private Long userID;
+	
+	private String userLogginName;
+
+    private String userFirstName;
+
+    private String userLastName;
+
+    private String userEmail;
+
+    @JsonIgnore
+    private String userPassword;
+
+    private Collection<? extends GrantedAuthority> authorities;
+
+     public UserPrinciple(Long userID, String userLogginName, String userFirstName, String userLastName, String userEmail,
+			String userPassword, Collection<? extends GrantedAuthority> authorities) {
+		super();
+		this.userID = userID;
+		this.userLogginName = userLogginName;
+		this.userFirstName = userFirstName;
+		this.userLastName = userLastName;
+		this.userEmail = userEmail;
+		this.userPassword = userPassword;
+		this.authorities = authorities;
+	}
+
+	public static UserPrinciple build(User user) {
+        List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
+                new SimpleGrantedAuthority(role.getName().name())
+        ).collect(Collectors.toList());
+
+        return new UserPrinciple(
+                user.getId(),
+                user.getName(),
+                user.getUsername(),
+                user.getEmail(),
+                user.getPassword(),
+                authorities
+        );
+    }
+
+	
+	
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorities;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        
+        UserPrinciple user = (UserPrinciple) o;
+        return Objects.equals(userID, user.userID);
+    }
+}

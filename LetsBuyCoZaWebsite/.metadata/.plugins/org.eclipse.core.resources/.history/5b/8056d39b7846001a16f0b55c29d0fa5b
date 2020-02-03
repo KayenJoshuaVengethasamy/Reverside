@@ -1,0 +1,17 @@
+package com.WebService.LetsBuy.service;
+
+import java.util.List;
+
+import com.WebService.LetsBuy.model.Product;
+
+public interface ProductService {
+	public boolean saveStudent(Product product);
+
+	public List<Product> getStudents();
+
+	public boolean deleteStudent(Product product);
+
+	public List<Product> getStudentByID(Product product);
+
+	public boolean updateStudent(Product product);
+}

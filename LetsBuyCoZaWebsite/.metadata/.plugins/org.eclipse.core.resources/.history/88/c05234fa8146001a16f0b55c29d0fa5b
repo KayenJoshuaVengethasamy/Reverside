@@ -1,0 +1,5 @@
+package com.WebService.LetsBuy.DAO.implementations;
+
+public class UserDAOImpl {
+
+}

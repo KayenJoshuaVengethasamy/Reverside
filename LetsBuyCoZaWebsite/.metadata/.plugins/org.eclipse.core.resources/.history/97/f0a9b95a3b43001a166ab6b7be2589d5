@@ -1,0 +1,13 @@
+package com.WebService.LetsBuy.service;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import com.WebService.LetsBuy.model.Product;
+import com.WebService.LetsBuy.web.dto.ProductRegistrationDto;
+
+public interface ProductService extends UserDetailsService {
+
+	Product findByProductName(String productName);
+
+	Product save(ProductRegistrationDto registration);
+}

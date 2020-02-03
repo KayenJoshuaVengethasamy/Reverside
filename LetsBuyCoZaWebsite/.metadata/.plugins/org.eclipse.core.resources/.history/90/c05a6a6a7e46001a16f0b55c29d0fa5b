@@ -1,0 +1,73 @@
+package com.WebService.LetsBuy.DAO.implementaations;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.WebService.LetsBuy.DAO.Product_DAO;
+import com.WebService.LetsBuy.model.Product;
+
+@Repository
+public class Product_DAOImpl implements Product_DAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	@Override
+	public boolean saveProduct(Product product) {
+		boolean status = false;
+		try {
+			sessionFactory.getCurrentSession().save(product);
+			status = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public List<Product> getProducts() {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Product> query = currentSession.createQuery("from product", Product.class);
+		List<Product> list = query.getResultList();
+		return list;
+	}
+
+	@Override
+	public boolean deleteProduct(Product product) {
+		boolean status = false;
+		try {
+			sessionFactory.getCurrentSession().delete(product);
+			status = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public List<Product> getProductByID(Product product) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Product> query = currentSession.createQuery("from product where productID=:productID", Product.class);
+		query.setParameter("productID", product.getProductID());
+		List<Product> list = query.getResultList();
+		return list;
+	}
+
+	@Override
+	public boolean updateProduct(Product product) {
+		boolean status = false;
+		try {
+			sessionFactory.getCurrentSession().update(product);
+			status = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.WebService.LetsBuy.services.implementations;
+
+@Service("UserService")  
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserDAO userDAO;
+	
+	
+	
+	@Transactional  
+    public int saveUserDetail(User user) {  
+        return userDAO.saveAdminDetail(user);  
+    }  
+      
+    @Transactional  
+    public int userLogin(String emailID, String password) {  
+        return userDAO.adminLogin(emailID, password);  
+    }  
+  
+    @Transactional  
+    public List<User> getAdminData() {  
+        return userDAO.getAdminData();  
+    }  
+      
+      
+  
+}  

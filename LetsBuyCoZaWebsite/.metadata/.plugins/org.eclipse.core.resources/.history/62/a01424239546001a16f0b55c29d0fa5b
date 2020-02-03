@@ -1,0 +1,47 @@
+package com.WebService.LetsBuy.services.implementations;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.WebService.LetsBuy.DAO.Product_DAO;
+import com.WebService.LetsBuy.model.Product;
+import com.WebService.LetsBuy.services.ProductService;
+
+@Service
+@Transactional
+public class ProductServiceImpl implements ProductService {
+
+	@Autowired
+	private Product_DAO productDAO;
+
+	@Override
+	public boolean saveProduct(Product product) {
+		return productDAO.saveProduct(product);
+	}
+
+	@Override
+	public List<Product> getProducts() {
+		return productDAO.getProducts();
+	}
+
+	@Override
+	public boolean deleteProduct(Product product) {
+		return productDAO.deleteProduct(product);
+	}
+
+	@Override
+	public List<Product> getProductByID(Product product) {
+		return productDAO.getProductByID(product);
+	}
+
+	@Override
+	public boolean updateProduct(Product product) {
+		return productDAO.updateProduct(product);
+	}
+
+}
+

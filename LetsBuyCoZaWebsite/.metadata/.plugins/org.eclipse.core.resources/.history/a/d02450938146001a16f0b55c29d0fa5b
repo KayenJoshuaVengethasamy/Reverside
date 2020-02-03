@@ -1,0 +1,13 @@
+package com.WebService.LetsBuy.DAO;
+
+public interface UserDAO {
+	
+
+    public int saveUser(User user);  
+      
+    public int userLogin(String emailID , String password);  
+      
+    public List<User> getUserData();  
+
+
+}

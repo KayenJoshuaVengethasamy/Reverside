@@ -1,0 +1,7 @@
+package com.WebService.LetsBuy.service.implementations;
+
+import com.WebService.LetsBuy.service.ProductService;
+
+public class ProductServiceImpl implements ProductService{
+
+}

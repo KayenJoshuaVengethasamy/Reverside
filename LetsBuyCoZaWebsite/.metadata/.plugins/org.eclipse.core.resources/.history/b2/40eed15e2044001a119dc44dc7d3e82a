@@ -1,0 +1,47 @@
+package com.WebService.LetsBuy.model;
+
+import javax.persistence.*;
+@Entity
+@Table(name="cart")
+public class Cart{
+
+  @Id
+  @Column(name="id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  Integer id;
+
+  @Column(name="cartd" , nullable=false)
+  Integer cartd;
+
+
+  public void setId(Integer id){
+    this.id=id;
+  }
+
+  public Integer getId(){
+   return this.id;
+  }
+
+  public void setCartd(Integer cartd){
+    this.cartd=cartd;
+  }
+
+  public Integer getCartd(){
+   return this.cartd;
+  }
+  @Override
+  public String toString(){
+    StringBuffer buf=new StringBuffer();
+    buf.append(this.cartd).append(" ");
+    return buf.toString();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+	  return false;
+    }
+    return this.getId() == ((Cart) obj).getId();
+  }
+
+}

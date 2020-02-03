@@ -1,0 +1,69 @@
+package com.WebService.LetsBuy.model;
+
+import javax.persistence.*;
+@Entity
+@Table(name="payment")
+public class Payment{
+
+  @Id
+  @Column(name="id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  Integer id;
+
+  @Column(name="paymentid" , nullable=false)
+  Integer paymentid;
+
+  @Column(name="paymenttype" , nullable=false)
+  String paymenttype;
+
+  @Column(name="paymentdetails" , nullable=false)
+  String paymentdetails;
+
+
+  public void setId(Integer id){
+    this.id=id;
+  }
+
+  public Integer getId(){
+   return this.id;
+  }
+
+  public void setPaymentid(Integer paymentid){
+    this.paymentid=paymentid;
+  }
+
+  public Integer getPaymentid(){
+   return this.paymentid;
+  }
+
+  public void setPaymenttype(String paymenttype){
+    this.paymenttype=paymenttype;
+  }
+
+  public String getPaymenttype(){
+   return this.paymenttype;
+  }
+
+  public void setPaymentdetails(String paymentdetails){
+    this.paymentdetails=paymentdetails;
+  }
+
+  public String getPaymentdetails(){
+   return this.paymentdetails;
+  }
+  @Override
+  public String toString(){
+    StringBuffer buf=new StringBuffer();
+    buf.append(this.paymentid).append(" ");
+    return buf.toString();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+	  return false;
+    }
+    return this.getId() == ((Payment) obj).getId();
+  }
+
+}

@@ -1,0 +1,5 @@
+package com.WebService.LetsBuy.messages.response;
+
+public class ResponseMessage {
+
+}

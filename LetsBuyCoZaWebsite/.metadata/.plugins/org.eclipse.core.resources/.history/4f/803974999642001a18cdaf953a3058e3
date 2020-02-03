@@ -1,0 +1,15 @@
+package com.WebService.LetsBuy.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.WebService.LetsBuy.model.Product;
+import com.WebService.LetsBuy.model.User;
+
+
+@Repository
+public class ProductRepository extends JpaRepository<User, Long> {
+	User findByUserEmail(String userEmail);
+}

@@ -1,7 +1,0 @@
-1579770793338	Delete resource 'LetsBuy/src/main/java/com/WebService/LetsBuy/config/EmbeddedRedisConfig.java'
-1579770807110	Delete resource 'LetsBuy/src/main/java/com/WebService/LetsBuy/config/Initializer.java'
-1579770811978	Delete resource 'LetsBuy/src/main/java/com/WebService/LetsBuy/config/MvcConfig.java'
-1579770819293	Delete resource 'LetsBuy/src/main/java/com/WebService/LetsBuy/config/MvcInitializer.java'
-1579770833555	Delete resource 'LetsBuy/src/main/java/com/WebService/LetsBuy/config/SecurityInitializer.java'
-1579770852435	Delete resource 'LetsBuy/src/main/java/com/WebService/LetsBuy/web/RestController.java'
-1579790327355	Delete resource 'LetsBuy/src/main/java/com/WebService/LetsBuy/config/HttpSessionConfig.java'

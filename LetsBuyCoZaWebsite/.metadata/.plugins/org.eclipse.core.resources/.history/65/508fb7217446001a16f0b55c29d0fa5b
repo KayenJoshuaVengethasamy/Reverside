@@ -1,0 +1,5 @@
+package com.WebService.LetsBuy.service.implementations;
+
+public class ProductServiceImpl {
+
+}

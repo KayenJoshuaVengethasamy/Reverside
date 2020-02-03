@@ -1,0 +1,51 @@
+package com.WebService.LetsBuy.web.dto;
+
+import javax.validation.constraints.NotEmpty;
+
+public class ProductRegistrationDto {
+
+	@NotEmpty
+	private String productName;
+
+	@NotEmpty
+	private String productImage;
+
+	@NotEmpty
+	private Double productPrice;
+
+	@NotEmpty
+	private String productDescription;
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(String productImage) {
+		this.productImage = productImage;
+	}
+
+	public Double getProductPrice() {
+		return productPrice;
+	}
+
+	public void setProductPrice(Double productPrice) {
+		this.productPrice = productPrice;
+	}
+
+	public String getProductDescription() {
+		return productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+}

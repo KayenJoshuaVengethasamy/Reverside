@@ -1,0 +1,5 @@
+package com.WebService.LetsBuy.token;
+
+public class GenerateToken {
+
+}

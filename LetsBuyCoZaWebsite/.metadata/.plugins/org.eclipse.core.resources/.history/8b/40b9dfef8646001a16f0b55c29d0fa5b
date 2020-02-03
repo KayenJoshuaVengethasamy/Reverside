@@ -1,0 +1,15 @@
+package com.WebService.LetsBuy.DAO;
+
+import java.util.List;
+
+import com.WebService.LetsBuy.model.User;
+
+public interface UserDAO {
+
+	public int saveUser(User user);
+
+	public int userLogin(String emailID, String password);
+
+	public List<User> getUserData();
+
+}

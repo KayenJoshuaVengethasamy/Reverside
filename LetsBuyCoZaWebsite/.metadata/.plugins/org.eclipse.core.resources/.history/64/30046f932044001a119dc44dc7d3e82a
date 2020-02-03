@@ -1,0 +1,12 @@
+package com.WebService.LetsBuy.model;
+
+import javax.persistence.*;
+@Entity
+@Table(name="cart")
+public class Cart{
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name="cartID" , nullable=false)
+  Integer cartID;
+}

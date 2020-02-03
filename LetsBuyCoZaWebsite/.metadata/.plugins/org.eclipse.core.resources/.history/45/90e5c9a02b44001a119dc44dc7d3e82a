@@ -1,0 +1,124 @@
+package com.WebService.LetsBuy.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.NaturalId;
+
+@Entity
+@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "userLoginName" }),
+		@UniqueConstraint(columnNames = { "userEmail" }) })
+public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long userID;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	private String userLoginName;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	private String userFirstName;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	private String userLastName;
+
+	@NaturalId
+	@NotBlank
+	@Size(max = 50)
+	@Email
+	private String userEmail;
+
+	@NotBlank
+	@Size(min = 6, max = 100)
+	private String userPassword;
+
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "userID"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles = new HashSet<>();
+
+	public User() {
+	}
+
+	public User(@NotBlank @Size(min = 3, max = 50) String userLoginName,
+			@NotBlank @Size(min = 3, max = 50) String userFirstName,
+			@NotBlank @Size(min = 3, max = 50) String userLastName, @NotBlank @Size(max = 50) @Email String userEmail,
+			@NotBlank @Size(min = 6, max = 100) String userPassword) {
+		super();
+		this.userLoginName = userLoginName;
+		this.userFirstName = userFirstName;
+		this.userLastName = userLastName;
+		this.userEmail = userEmail;
+		this.userPassword = userPassword;
+	}
+
+	public Long getUserID() {
+		return userID;
+	}
+
+	public void setUserID(Long userID) {
+		this.userID = userID;
+	}
+
+	public String getUserLoginName() {
+		return userLoginName;
+	}
+
+	public void setUserLoginName(String userLoginName) {
+		this.userLoginName = userLoginName;
+	}
+
+	public String getUserFirstName() {
+		return userFirstName;
+	}
+
+	public void setUserFirstName(String userFirstName) {
+		this.userFirstName = userFirstName;
+	}
+
+	public String getUserLastName() {
+		return userLastName;
+	}
+
+	public void setUserLastName(String userLastName) {
+		this.userLastName = userLastName;
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+}

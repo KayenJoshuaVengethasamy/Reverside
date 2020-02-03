@@ -1,0 +1,5 @@
+package com.WebService.Ecommerce.repository;
+
+public interface OrderProductRepository {
+
+}

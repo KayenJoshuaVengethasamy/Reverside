@@ -1,0 +1,19 @@
+package com.WebService.LetsBuy.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.WebService.LetsBuy.model.Product;
+
+
+@Repository
+public class ProductRepository extends JpaRepository<Products, Integer> {
+	public List<Products> findByProductID(String productID);
+
+	public List<Products> findByProductName(String productName);
+
+	public List<Products> findByProductImage(String productImage);
+
+	public List<Products> findByProductPrice(String productPrice);
+
+	public List<Products> findByProductDescription(String productDescription);
+}

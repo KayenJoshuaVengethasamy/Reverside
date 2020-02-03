@@ -1,0 +1,6 @@
+package com.WebService.LetsBuy.DAO.implementations;
+
+@Repository("UserDAO")
+public class UserDAOImpl implements UserDAO { 
+
+}

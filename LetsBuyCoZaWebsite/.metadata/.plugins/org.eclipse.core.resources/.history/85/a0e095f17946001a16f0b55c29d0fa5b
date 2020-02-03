@@ -1,0 +1,58 @@
+package com.WebService.LetsBuy.web;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.WebService.LetsBuy.model.Product;
+import com.WebService.LetsBuy.service.ProductService;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "/api")
+
+public class ProductController {
+
+	@Autowired
+	private ProductService productService;
+	
+	
+
+	 @PostMapping("save-product")  
+	    public boolean saveStudent(@RequestBody Product product) {  
+	         return productService.saveProduct(product);  
+	          
+	    }  
+	      
+	    @GetMapping("products-list")  
+	    public List<Product> allproducts() {  
+	         return productService.getProducts();  
+	    }  
+	      
+	    @DeleteMapping("delete-product/{productID}")  
+	    public boolean deleteStudent(@PathVariable("productID") int productID,Product product) {  
+	      product.setProductID(productID);  
+	      return productService.deleteProduct(product);
+	      }  
+	  
+	    @GetMapping("product/{productID}")  
+	    public List<Product> allproductByID(@PathVariable("productID") int productID,Product product) {  
+	         product.setProductID(productID);  
+	         return productService.getProductByID(product);  
+	          
+	    }  
+	      
+	    @PostMapping("update-product/{productID}")  
+	    public boolean updateProduct(@RequestBody Product product,@PathVariable("productID") int productID) {  
+	    	product.setProductID(productID);  
+	        return product.updateProduct(product);  
+	    }  
+	}  

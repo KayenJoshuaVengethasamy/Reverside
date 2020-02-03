@@ -1,0 +1,23 @@
+package com.WebService.LetsBuy.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.WebService.LetsBuy.model.Feedback;
+import com.WebService.LetsBuy.repository.FeedbackRepository;
+import com.WebService.LetsBuy.web.dto.FeedbackRegistrationDto;
+
+public class FeedbackServiceImpl implements FeedbackService {
+	@Autowired
+	private FeedbackRepository feedbackRepository;
+
+	public Feedback save(FeedbackRegistrationDto registration) {
+		Feedback feedback = new Feedback();
+
+		feedback.setFeedbackName(registration.getFeedbackName());
+		feedback.setFeedbackSurname(registration.getFeedbackSurname());
+		feedback.setFeedbackEmail(registration.getFeedbackEmail());
+		feedback.setFeedbackContents(registration.getFeedbackContents());
+		return feedbackRepository.save(feedback);
+	}
+
+}

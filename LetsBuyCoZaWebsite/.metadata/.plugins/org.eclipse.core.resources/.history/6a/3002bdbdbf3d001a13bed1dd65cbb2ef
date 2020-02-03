@@ -1,5 +1,0 @@
-package com.WebService.LetsBuy.config;
-
-public class MvcInitializer {
-
-}

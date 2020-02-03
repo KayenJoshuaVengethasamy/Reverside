@@ -1,0 +1,31 @@
+package com.WebService.LetsBuy.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.WebService.LetsBuy.service.ProductService;
+
+@Controller
+@RequestMapping("/productdelete")
+public class ProductDeletionController {
+
+	@Autowired
+	private ProductService productService;
+
+	@RequestMapping(method = RequestMethod.GET)
+	public String index(ModelMap modelMap) {
+		modelMap.put("productdelete", productService.findAll());
+		return "productdelete/index";
+	}
+
+	@RequestMapping(value = "delete/{productID}", method = RequestMethod.GET)
+	public String delete(@PathVariable("productID") int productID) {
+		productService.delete(productID);
+		return "redirect:/productdelete";
+	}
+
+}

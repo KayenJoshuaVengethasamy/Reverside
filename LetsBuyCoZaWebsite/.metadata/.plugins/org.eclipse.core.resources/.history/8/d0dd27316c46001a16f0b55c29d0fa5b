@@ -1,0 +1,23 @@
+package com.WebService.LetsBuy.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.WebService.LetsBuy.model.Product;
+
+@Repository
+public interface ProductRepository extends CrudRepository<Product, Long> {
+	Product findByProductName(String productName);
+
+	public boolean saveStudent(Student student);
+
+	public List<Product> getProduct();
+
+	public boolean deleteProduct(Product product);
+
+	public List<Product> getProductByID(Product product);
+
+	public boolean updateProduct(Product product);
+}
