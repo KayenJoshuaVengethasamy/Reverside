@@ -1,0 +1,5 @@
+1580369424104	Rename resource 'ProductService.java'
+1580474138963	Move 'security' to 'LetsBuy'
+1580475182695	Move 'jwt' to 'security'
+1580475217365	Move 'JwtAuthEntryPoint.java' to 'jwt'
+1580475430074	Rename resource 'JWTProvider.java'

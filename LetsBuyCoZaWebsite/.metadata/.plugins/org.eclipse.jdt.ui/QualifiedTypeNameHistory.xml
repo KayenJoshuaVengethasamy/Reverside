@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.security.core.GrantedAuthority"/>
+<fullyQualifiedTypeName name="org.springframework.security.core.authority.SimpleGrantedAuthority"/>
+<fullyQualifiedTypeName name="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.WebService.LetsBuy.model.Product"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.NotEmpty"/>
+<fullyQualifiedTypeName name="com.WebService.LetsBuy.service.FeedbackService"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.Email"/>
+<fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="com.WebService.LetsBuy.model.Role"/>
+<fullyQualifiedTypeName name="com.WebService.LetsBuy.model.User"/>
+</qualifiedTypeNameHistroy>

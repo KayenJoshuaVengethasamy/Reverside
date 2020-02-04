@@ -38,6 +38,7 @@ Binding(CTRL+SHIFT+T,
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
+!ENTRY org.eclipse.egit.ui 2 0 2020-01-22 09:51:19.777
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\User'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
